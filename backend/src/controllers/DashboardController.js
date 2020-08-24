@@ -18,7 +18,7 @@ async getEventById(req,res){
 
 async getAllEvents(req,res){        
     const {sport} = req.params;
-    const query = {sport} || {}
+    const query = sport ? {sport} : {}
     try {
         
         const events = await Event.find(query);
